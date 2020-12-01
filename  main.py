@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 
-PORT = int(os.environ.get("PORT", 443))
+PORT = int(os.environ.get("PORT", 5000))
 
 
 with open('trained_model.plk','rb') as f:
