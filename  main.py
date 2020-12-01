@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 
+
 with open('trained_model.plk','rb') as f:
     model = pickle.load(f)
 
@@ -50,5 +51,5 @@ async def create_item(Pregnancies:float,
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000, debug=True)
+    uvicorn.run(app, host="0.0.0.0", port=8080, debug=True)
 
