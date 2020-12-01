@@ -1,9 +1,12 @@
 import pickle
+import os
 from sys import flags
 import pandas as pd
 from fastapi import FastAPI
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
+
+PORT = int(os.environ.get("PORT", 8080))
 
 
 with open('trained_model.plk','rb') as f:
@@ -51,5 +54,5 @@ async def create_item(Pregnancies:float,
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080, debug=True)
+    uvicorn.run(app, host="0.0.0.0", port=PORT, debug=True)
 
