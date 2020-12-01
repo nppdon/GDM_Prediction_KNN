@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:5000 main.py:app
+web: uvicorn main:app --host=0.0.0.0 --port=${PORT:-5000}
