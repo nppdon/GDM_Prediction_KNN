@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 
-PORT = int(os.environ.get("PORT", 5000))
+#PORT = int(os.environ.get("PORT", 5000))
 
 
 with open('trained_model.plk','rb') as f:
@@ -53,5 +53,5 @@ async def create_item(Pregnancies:float,
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=PORT, debug=True)
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=True)
 
